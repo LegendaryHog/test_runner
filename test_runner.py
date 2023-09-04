@@ -26,13 +26,13 @@ def run_tests(exe, test_names, test_cmp):
         passed += pair[0]
         output = pair[1]
         print(test_name + ' ', end='')
-        print_dots(LEN_DOTS - len(test_name))
+        print_dots(len(test_name))
         if pair[0] == 0:
             print(colored('   Failed    ', 'red'), end='')
-            print(output)
         else:
             print(colored('   Passed    ', 'green'), end='')
-        print(str(round(time_res), 2))
+        print(str(round(time_res, 2)) + ' sec')
+        print(output, end='')
         
         total_time += time_res
 
