@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import sys, math, re, os, time
+import os, time
 from termcolor import colored
 
 LEN_DOTS = 61
@@ -35,6 +35,9 @@ def run_tests(exe, test_names, test_cmp):
         print(str(round(time_res), 2))
         
         total_time += time_res
+
+        file_result.close()
+        file_answer.close()
 
     number_of_tests = len(test_names)
     final_output = str(int(float(passed)/float(number_of_tests) * 100.0)) + '% tests passed'
