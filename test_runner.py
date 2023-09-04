@@ -25,6 +25,7 @@ def run_tests(exe, test_names, test_cmp):
         file_answer = open(test_name + '.ans', 'r')
 
         pair = test_cmp(file_result, file_answer)
+        os.system('rm tmp')
         passed += pair[0]
         output = pair[1]
         print(test_name + ' ', end='')
