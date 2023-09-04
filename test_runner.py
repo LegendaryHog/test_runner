@@ -13,6 +13,8 @@ def run_tests(exe, test_names, test_cmp):
     passed = 0
     total_time = 0.0
 
+    print('Start testing, program: ' + exe + '\n')
+
     for test_name in test_names:
         start = time.perf_counter()
         os.system('./' + exe + ' < ' + test_name + ' > tmp')
