@@ -5,7 +5,7 @@ from termcolor import colored
 
 LEN_DOTS = 61
 
-def print_dots(len_name):
+def __print_dots(len_name):
     for i in range(LEN_DOTS - len_name):
         print('.', end='')
 
@@ -26,7 +26,7 @@ def run_tests(exe, test_names, test_cmp):
         passed += pair[0]
         output = pair[1]
         print(test_name + ' ', end='')
-        print_dots(len(test_name))
+        __print_dots(len(test_name))
         if pair[0] == 0:
             print(colored('   Failed    ', 'red'), end='')
         else:
