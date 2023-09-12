@@ -5,10 +5,6 @@ from termcolor import colored
 
 LEN_DOTS = 61
 
-def __print_dots(len_name):
-    for i in range(LEN_DOTS - len_name):
-        print('.', end='')
-
 def run_all_tests(exe, test_names, test_cmp):
     passed = 0
     total_time = 0.0
@@ -24,13 +20,11 @@ def run_all_tests(exe, test_names, test_cmp):
         file_result = open('tmp', 'r')
         file_answer = open(test_name + '.ans', 'r')
 
-        pair = test_cmp(file_result, file_answer)
+        result, output = test_cmp(file_result, file_answer)
         os.system('rm tmp')
-        passed += pair[0]
-        output = pair[1]
-        print(test_name + ' ', end='')
-        __print_dots(len(test_name))
-        if pair[0] == 0:
+        passed += result
+        print(f"{test_name + ' ':.<{LEN_DOTS}}", end='')
+        if result == 0:
             print(colored('   Failed    ', 'red'), end='')
         else:
             print(colored('   Passed    ', 'green'), end='')
