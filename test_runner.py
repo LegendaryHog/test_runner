@@ -9,7 +9,7 @@ def __print_dots(len_name):
     for i in range(LEN_DOTS - len_name):
         print('.', end='')
 
-def run_tests(exe, test_names, test_cmp):
+def run_all_tests(exe, test_names, test_cmp):
     passed = 0
     total_time = 0.0
 

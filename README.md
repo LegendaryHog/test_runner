@@ -1,7 +1,7 @@
 # Test Runner library
 
 Library to run end to end tests.
-# `run_tests()`
+# `run_all_tests()`
 
 run_test(exe, test_names, test_cmp)
 
